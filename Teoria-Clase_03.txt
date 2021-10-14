@@ -1,0 +1,60 @@
+Semana 3-Clase 3:
+
+IPV4: tiene 32 bit; formada por los bits de red y bits de host (26 y 6 respectivamente).
+
+      EJMP
+       |
+        ->    192.168.1.10 ->para convertir en bits tenemos que transformarlo en binario
+
+
+  *PARA TRANSFORMAR EN BINARIO SE HACE DE LA SGTE MANERA
+			128   64   32   16   8   4   2   1
+		192=     1     1    0    0   0   0   0   0
+		168=     1     0    1    0   1   0   0   0
+		  1=	 0     0    0    0   0   0   0   1
+		 10=	 0     0    0    0   1   0   1   0
+
+	ESTO SERIA CONVERTIDO A BINARIO
+   	  |
+           >   11000000.10101000.00000001.00001010
+	AHORA LOS 26 PRIMEROS BITS SON DE RED Y LOS 6 RESTANTES SERIAN DE HOST
+	
+	       11000000.10101000.00000001.00           001010
+              |                             |         |      |
+                         BITS DE RED                 BITS DE HOST
+	AHORA PARA SABER LA RED A LA QUE PERTENECE MI EQUIPO 
+ 		      11000000.10101000.00000001.00001010
+
+	TODOS LOS BITS DE HOST LO LLENAREMOS CON "0"
+		
+                      11000000.10101000.00000001.00 000000
+	AHORA LO CONVERTIMOS A NUMEROS Y LO QUE NOS DA ES "LA RED
+                     A LA QUE PERTENECE NUESTRO EQUIPO"
+		                 192.168.1.0
+       ---------------------------------------------------------------------------
+       
+BROADCAST: Es la ip q se usa para comunicarme con todos los equipos de mi red 
+
+        AHORA PARA SABER LA IP DE BROADCAST
+       
+ 		      11000000.10101000.00000001.00001010
+
+	TODOS LOS BITS DE HOST LO LLENAREMOS CON "1"
+		
+                      11000000.10101000.00000001.00  111111
+	AHORA LO CONVERTIMOS A NUMEROS Y LO QUE NOS DA ES "LA IP DE BROADCAST"
+		                 192.168.1.63
+       ---------------------------------------------------------------------------
+MASCARA DE SUBRED:
+	
+	PARA SABER LA MASCARA DE SUBRED SE REEMPLAZARA LOS BITS DE RED POR "1" Y LOS 
+	LOS BITS DE HOST POR "0"
+			11111111.11111111.11111111.11000000
+			         255.255.255.192
+       ---------------------------------------------------------------------------
+PUERTA DE ENLACE: Es la primera o ultima ip util
+       ---------------------------------------------------------------------------
+DNS: Se encarga resolver los nombres en una ip.
+   EJMP: www.google.com --> esto es un ip y el que se encarga de traducirlo es el DNS
+y el DNS tmb tiene una ip que varia de acuerdo a la empresa o donde se este trabajando.
+El DNS de GOOGLE es el 8.8.8.8
